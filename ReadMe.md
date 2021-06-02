@@ -44,7 +44,7 @@ if (Flx.isLandscale()) trace("the orientation is landscape");
 if (Flx.isPortrait()) trace("the orientation is portrait");
 ```
 
-![API](.\docs_assets\API.png)
+![API](/docs_assets/API.png)
 
 
 
@@ -96,7 +96,7 @@ addChild (new FlxGame(320, 240, PlayState));
 
 
 
-![scr1](.\docs_assets\scr1.png)
+![scr1](/docs_assets/scr1.png)
 
 You just set your design resolution to HaxeFlixel! Let's add a background color. Go to `PlayState.h`x in source folder and add this line in `override public function create()` under `super.create();`
 
@@ -104,15 +104,15 @@ You just set your design resolution to HaxeFlixel! Let's add a background color.
 bgColor = FlxColor.BLUE;
 ```
 
-![scr2](.\docs_assets\scr2.png)
+![scr2](/docs_assets/scr2.png)
 
 Let's try it on full screen. Go to `Project.xml` at the root folder of your project and change the line 25 the fullscreen from *false* to *true*.
 
-![scr3](.\docs_assets\scr3.png)
+![scr3](/docs_assets/scr3.png)
 
 Now build the project with neko or hashlink. The chances that your monitor aspect ratio is not 1.33 are high, so you possibly will see something like this:
 
-![scr4](.\docs_assets\scr4.png)
+![scr4](/docs_assets/scr4.png)
 
 The black bars are not part of your game, but are part of the game's screen and the gaming experience. If we remove the values of the resolution we previously hard coded in `Main.hx`  the black bars will be removedbut then we are not providing the desired resolution. A pixel art game with 320x240 design resolution assets would look tiny in a FHD screen.
 
@@ -124,17 +124,17 @@ The black bars problems can be solved by the FlxRes. Additionally, FlxRes will a
 
 Clone or download this repository which contains the example project and open it with your favorite IDE. Then built it with neko or hashlink.  You will see a window with dimensions 640x480px (the default window size of a new empty HaxeFlixel project). You will also see a skeleton patrolling inside a cave. The skeleton's logic is patrolling from the edge of one side to the other, ensuring us that the resulted width of FlexRes calculations is correct. If the patrolling was shorter than the width of the window or longer (leaving outside of window) we could instantly tell. 
 
-![skel](.\docs_assets\skel.gif)
+![skel](/docs_assets/skel.gif)
 
 The results of the FlexRes are not obvious now because the size of the window (640x480px) are double than our design resolution (320x240px), thus the result would be the same without FlexRes. 
 
 Now go to `Project.xml` and  change at line 25 the fullscreen from `false` to `true`.
 
-![scr10](.\docs_assets\scr10.png)
+![scr10](/docs_assets/scr10.png)
 
 Build again the project with neko of hashlink. You will see the following:
 
-![scr11](.\docs_assets\scr11.png)
+![scr11](/docs_assets/scr11.png)
 
 As we saw in the previous section "The Problem FlxRes solves", normally we would see black bars left and right on the screen, but thanks to FlexRes this problem is solved! Switch back in  `Project.xml` at line 25, the fullscreen from `true` to `false`. Next, we will inspect the source code and the assets of this example project.
 
@@ -142,7 +142,7 @@ As we saw in the previous section "The Problem FlxRes solves", normally we would
 
  Lets see the FlexRes class first. Go to `source\flxres` folder and open the `FlexRes.hx` file. We see a `single static public function`. That means that we can call this function whenever we want and from everywhere without creating an instance of FlexRes class. 
 
-![scr8](.\docs_assets\scr8.png)
+![scr8](/docs_assets/scr8.png)
 
 This is how to use the function:
 
@@ -165,7 +165,7 @@ Now let's see the assets of the example:
 - The skeleton sprite is 45x51px
 - And the ground tile is 32x33px
 
-![scr5](.\docs_assets\scr5.png)
+![scr5](/docs_assets/scr5.png)
 
 The assets can be found in the `assets\images` folder.
 
@@ -173,25 +173,25 @@ The assets can be found in the `assets\images` folder.
 
 Let's inspect the `Main.hx` a bit. Under `class Main extends Sprite` there are 2 constants the `DESIGN_WIDTH` and the `DESIGN_HEIGHT`. Their values match the design resolution.
 
-![scr6](.\docs_assets\scr6.png)
+![scr6](/docs_assets/scr6.png)
 
 Let's see inside the `public function new()`.  We declare two local variables `_width` and `_height`.  We also declare the `returnWidth` variable as `false`. That means that we will provide to FlxRes the width as design value and it will calculate the other dimension, thus, the height (lines 39-40). Notice that we omitted the 2nd argument. It is optional and omitting it, means `false`.
 
-![scr7](.\docs_assets\scr7.png)
+![scr7](/docs_assets/scr7.png)
 
 Now go to `Project.xml` and  at line 19 change the width from 640 to 900.  Also make sure that you have switched back  the fullscreen from `true` to `false` at line 25.
 
-![scr12](.\docs_assets\scr12.png)
+![scr12](/docs_assets/scr12.png)
 
 Now build with neko or hashlink. You will see a wider window of aspect ratio 1.87. FlxRes is taking care of the logic part of resolution handling, thus, no need to actually mess with or hard code in the source code. Just changing the appropriate values in `Project.xml` is enough! 
 
-![scr13](.\docs_assets\scr13.png)
+![scr13](/docs_assets/scr13.png)
 
 You can also build on android, but with landscape orientation it does not really matter. The output will be about the same more or less... Just take in mind that the first android build will be quite long.
 
 The aspect ratio of 1.8 and even wider than that, is very common for mobile devices. The [Cubot P20](https://www.gizmochina.com/product/cubot-p20/) has aspect ratio of 2.11.  Next there is a rough sketch that depictures a mobile device with the wide aspect ratio of 2.11. While at landscape orientation the width is greater than  height, thus same things applies more of less with the desktop builds, resolution wise.
 
-![scr14](.\docs_assets\scr14.png)
+![scr14](/docs_assets/scr14.png)
 
 Now it is time to see what is the difference if the width is chosen over the height as passing design value to FlxRes and vise versa. 
 
@@ -207,7 +207,7 @@ Pretty close to the screens ratio 2.11. Unless the result of the division of the
 
 > One reason the final result should be an even number, is because of the fact that there is possibly no monitor with odd numbers resolution.  Another reason is to avoid distortions on pixel art assets.
 
-![scr15](.\docs_assets\scr15.png)
+![scr15](/docs_assets/scr15.png)
 
 
 
@@ -215,15 +215,15 @@ Pretty close to the screens ratio 2.11. Unless the result of the division of the
 
  Go to `Main.hx` and switch the variable `returnWidth` to `true`. What way we provide to FlxRes the height in order to return the width (lines 34-35).
 
-![scr16](.\docs_assets\scr16.png)
+![scr16](/docs_assets/scr16.png)
 
 Build the project with neko or hashlink. If you prefer you can even build for android. You will see a slightly different result.
 
-![scr17](.\docs_assets\scr17.png)
+![scr17](/docs_assets/scr17.png)
 
 Can you tell the difference? The scene now is zoomed out and the ceiling of the cave is visible. Lets see why on the mobile sketch:
 
-![scr18](.\docs_assets\scr18.png)
+![scr18](/docs_assets/scr18.png)
 
 We are passing to FlexRes the design height, so the whole background (*bg1.png*) is visible because its height is 208px + 33 px the ground tile - 1  pixel of the ground tile that is drawing on top of background, **total 240px** the value we passed as desing height. FlxRes calculated and returned the width which is:
 $$
@@ -241,25 +241,25 @@ Vertical monitors are not very common, so full screen portrait orientation makes
 
 For testing this example project on portrait orientation, go to `Project.xml` and change the on line 19 the width to 480 and the height to 900 for testing on neko/haslink or just change the orientation to portrait on line 28 for testing on mobile.
 
-![scr20](.\docs_assets\scr20.png)
+![scr20](/docs_assets/scr20.png)
 
 Now you can repeat all the steps we did with landscape orientation and see the results. How this example looks if we pass the width and the `returnWidth` variable to `false`? How this example looks if we pass the height and the `returnWidth` variable to `true`?  I will not go in detail, you should be able to do it on your own, but I will post some screenshots and if necessary some comments. 
 
  Before everything else the mobile sketch on portrait orientation to see the screen dimensions:
 
-<img src=".\docs_assets\scr22.png" alt="scr22" style="zoom:50%;" />
+<img src="/docs_assets/scr22.png" alt="scr22" style="zoom:50%;" />
 
 Now to the builds: 
 
-![scr21](.\docs_assets\scr21.png)
+![scr21](/docs_assets/scr21.png)
 
 The text "Hello from HaxeFlixel" on top, confirms that there is a stage there and not a black bar. This background seems to be poor choice with design width. 
 
-![scr23](.\docs_assets\scr23.png)
+![scr23](/docs_assets/scr23.png)
 
-![scr24](.\docs_assets\scr24.png)
+![scr24](/docs_assets/scr24.png)
 
-![scr25](.\docs_assets\scr25.png)
+![scr25](/docs_assets/scr25.png)
 
 ## Design width vs design height
 
@@ -277,11 +277,11 @@ While HTML5 is the target platform I made all of my HaxeFlixel mini projects, I 
 
 If you change the width and the height in `Project.xml` (line 19) as we did with the windowed neko or hashlink builds, those changes will affect the size of game area on the browser tab.
 
-<img src=".\docs_assets\scr26.png" alt="scr26" style="zoom:80%;" />
+<img src="/docs_assets/scr26.png" alt="scr26" style="zoom:80%;" />
 
 If you set the width and height to 0 in `Project.xml` (line 19) the game area will fill the whole browser tab. 
 
-<img src=".\docs_assets\scr27.png" alt="scr27" style="zoom:50%;" />
+<img src="/docs_assets/scr27.png" alt="scr27" style="zoom:50%;" />
 
 
 
@@ -289,7 +289,7 @@ But if you press f11 (browser goes full screen) a black bar will appear at the b
 
 
 
-<img src=".\docs_assets\scr28.png" alt="scr27" style="zoom: 50%;" />
+<img src="/docs_assets/scr28.png" alt="scr27" style="zoom: 50%;" />
 
 Setting the `returnWidth` to `true` of `false` will affect the same as we saw so far.
 
