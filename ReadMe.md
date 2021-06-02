@@ -1,4 +1,4 @@
-![banner](\docs_assets\banner.png)
+![banner](/docs_assets/banner.png)
 
 > *If you are using GameMaker Studio 2, check out the [Advanced Resolution Manager](https://harpwood.itch.io/advanced-resolution-manager). It is free and open source!*
 
