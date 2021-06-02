@@ -20,7 +20,7 @@ In my coding and game development journey, I have tried and even used in product
 
 ## Overview 
 
-FlxRes can make your project looks as it should on any screen, any resolution. FlxRes is easy multiresolution handling for [HaxeFlixel](https://haxeflixel.com/). Its primary goal is to be simple, easy to use and accessible to beginners. 
+FlxRes hopefully can make your project looks as it should on any screen, any resolution. FlxRes is easy multiresolution handling for [HaxeFlixel](https://haxeflixel.com/). Its primary goal is to be simple, easy to use and accessible to beginners. 
 
 ### API  overview
 
