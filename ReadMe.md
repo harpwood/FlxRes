@@ -233,7 +233,9 @@ The resulted width is rounded down to 527 and if will be raised to 528 in order 
 
 ### Handling extreme aspect ratios
 
-Just for fun and testing the FlxRes capabilities, lets try an extreme aspect ratio. Go to `Project.xml` and change at line 19 the width to 1900 and the height to 365. Build the game with neko or hashlink and see the extreme aspect ratio of 5.2 in action! ![scr19](.\docs_assets\scr19.png)
+Just for fun and testing the FlxRes capabilities, lets try an extreme aspect ratio. Go to `Project.xml` and change at line 19 the width to 1900 and the height to 365. Build the game with neko or hashlink and see the extreme aspect ratio of 5.2 in action! 
+
+![scr19](/docs_assets/scr19.png)
 
 ### Using FlexRes on portrait orientation
 
