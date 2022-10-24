@@ -26,6 +26,9 @@ FlxRes hopefully can make your project looks as it should on any screen, any res
 
 ```
 // provide the width, get the height
+height = FlxRes.getOtherDimension(width, false);
+
+// if you ommit the second argument, it will be assumed as false
 height = FlxRes.getOtherDimension(width);
 
 // provide the height, get the width
